@@ -6,16 +6,17 @@
 /*   By: rolee <rolee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:59:06 by rolee             #+#    #+#             */
-/*   Updated: 2024/03/22 17:20:13 by rolee            ###   ########.fr       */
+/*   Updated: 2024/05/09 21:57:20 by rolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
 static t_list	*set_node(int fd, t_list *head_node, t_list **current_node);
-static t_list	*create_or_remove_node(int flag, int fd, t_list *head_node, t_list *node);
-static char	*read_line(int fd, char *buffer, char *storage);
-static char	*separate_by_newline(char *line);
+static t_list	*create_or_remove_node(int flag, int fd, \
+										t_list *head_node, t_list *node);
+static char		*read_line(int fd, char *buffer, char *storage);
+static char		*separate_by_newline(char *line);
 
 char	*get_next_line(int fd)
 {
@@ -46,7 +47,8 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-static t_list	*create_or_remove_node(int flag, int fd, t_list *head_node, t_list *node)
+static t_list	*create_or_remove_node(int flag, int fd, \
+										t_list *head_node, t_list *node)
 {
 	t_list	*temp_node;
 
@@ -81,7 +83,8 @@ static t_list	*set_node(int fd, t_list *head_node, t_list **current_node)
 
 	if (!head_node)
 	{
-		*current_node = create_or_remove_node(CREATE, fd, head_node, *current_node);
+		*current_node = \
+			create_or_remove_node(CREATE, fd, head_node, *current_node);
 		return (*current_node);
 	}
 	temp_node = head_node;
@@ -90,7 +93,8 @@ static t_list	*set_node(int fd, t_list *head_node, t_list **current_node)
 		if (temp_node->fd == fd)
 			break ;
 		if (temp_node->next == NULL)
-			temp_node->next = create_or_remove_node(CREATE, fd, head_node, *current_node);
+			temp_node->next = \
+				create_or_remove_node(CREATE, fd, head_node, *current_node);
 		temp_node = temp_node->next;
 	}
 	*current_node = temp_node;

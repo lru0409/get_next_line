@@ -6,7 +6,7 @@
 /*   By: rolee <rolee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:59:06 by rolee             #+#    #+#             */
-/*   Updated: 2024/03/22 16:52:28 by rolee            ###   ########.fr       */
+/*   Updated: 2024/05/09 21:54:17 by rolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,6 @@ static char	*read_line(int fd, char *buffer, char *storage)
 	}
 	return (storage);
 }
-
-#include <stdio.h>
 
 static char	*separate_by_newline(char *line)
 {
