@@ -6,11 +6,12 @@
 /*   By: rolee <rolee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:59:06 by rolee             #+#    #+#             */
-/*   Updated: 2024/05/09 21:54:17 by rolee            ###   ########.fr       */
+/*   Updated: 2024/05/10 18:53:18 by rolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdio.h>
 
 static char	*read_line(int fd, char *buffer, char *storage);
 static char	*separate_by_newline(char *line);
@@ -72,7 +73,6 @@ static char	*separate_by_newline(char *line)
 		idx++;
 	if (line[idx] == 0)
 		return (NULL);
-	line[idx + 1] = 0;
 	storage = ft_substr(line, idx + 1, ft_strlen(line) - idx - 1);
 	if (!storage)
 		return (NULL);
@@ -81,5 +81,6 @@ static char	*separate_by_newline(char *line)
 		free(storage);
 		storage = NULL;
 	}
+	line[idx + 1] = 0;
 	return (storage);
 }
