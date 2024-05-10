@@ -6,12 +6,11 @@
 /*   By: rolee <rolee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:59:06 by rolee             #+#    #+#             */
-/*   Updated: 2024/05/10 18:53:18 by rolee            ###   ########.fr       */
+/*   Updated: 2024/05/10 19:01:59 by rolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
 static char	*read_line(int fd, char *buffer, char *storage);
 static char	*separate_by_newline(char *line);
